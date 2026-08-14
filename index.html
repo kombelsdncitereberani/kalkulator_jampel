@@ -203,6 +203,41 @@
     .panel{display:none !important;}
     .panel.print-target{display:block !important;}
     body{background:#fff;}
+
+    /* "Cetak Jadwal" mencetak tab aktif apa adanya, yang isinya elemen form
+       (input/select) untuk mode edit di layar. Netralkan tampilannya supaya
+       di kertas terlihat seperti tabel data biasa — bukan formulir dengan
+       kotak, panah dropdown, dan tombol hapus. */
+    .panel.print-target input,
+    .panel.print-target select{
+      border:none !important;
+      background:transparent !important;
+      padding:1px 2px !important;
+      margin:0 !important;
+      color:#000 !important;
+      width:auto !important;
+      max-width:100% !important;
+      box-shadow:none !important;
+      outline:none !important;
+      -webkit-appearance:none !important;
+      -moz-appearance:none !important;
+      appearance:none !important;
+      font:inherit !important;
+    }
+    .panel.print-target input::-webkit-outer-spin-button,
+    .panel.print-target input::-webkit-inner-spin-button{
+      -webkit-appearance:none !important; margin:0 !important;
+    }
+    .panel.print-target input[type="number"]{-moz-appearance:textfield !important;}
+    .panel.print-target button{display:none !important;}
+    .panel.print-target table{min-width:0 !important; width:100% !important; table-layout:auto !important;}
+    .panel.print-target .roster-wrap{overflow:visible !important;}
+    .panel.print-target .grid-2{display:block !important;}
+    .panel.print-target .grid-2 > *{margin-bottom:14px;}
+    /* Teks penjelasan cara pakai di bawah judul tahap hanya relevan saat
+       mengedit di layar — tidak perlu ikut tercetak di kertas. */
+    .panel.print-target .panel-head p{display:none !important;}
+    .panel.print-target .panel-head{margin-bottom:10px; padding-bottom:6px;}
   }
   #officialPrintArea{display:none;}
   .op-kop{text-align:center; margin-bottom:6px;}
